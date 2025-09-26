@@ -87,8 +87,8 @@
         opacity: 0.4;
         animation: floatImage 25s infinite ease-in-out;
         object-fit: cover;
-        filter: blur(1px); /* Adds subtle blur for dreamy effect */
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Adds depth */
+        filter: blur(1px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       }
 
       @keyframes float {
@@ -117,16 +117,29 @@
         text-align: center;
         max-width: 900px;
         z-index: 10;
-        padding: 2rem;
+        padding: 3rem;
         background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(10px);
         border-radius: 30px;
         border: 1px solid rgba(255, 255, 255, 0.2);
       }
 
+      .logo {
+        width: 700px;
+        height: auto;
+        margin-bottom: 2rem;
+        filter: drop-shadow(0 10px 30px rgba(52, 152, 219, 0.2));
+        transition: all 0.3s ease;
+      }
+
+      .logo:hover {
+        transform: scale(1.05);
+        filter: drop-shadow(0 15px 40px rgba(52, 152, 219, 0.3));
+      }
+
       .hero-title {
         font-family: "Playfair Display", serif;
-        font-size: clamp(3rem, 8vw, 7rem);
+        font-size: clamp(2.5rem, 6vw, 5rem);
         font-weight: 700;
         margin-bottom: 1rem;
         background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
@@ -389,8 +402,14 @@
           display: none;
         }
         .hero-content {
-          padding: 1.5rem;
+          padding: 2rem 1.5rem;
           margin: 1rem;
+        }
+        .logo {
+          width: 220px;
+        }
+        .hero-title {
+          font-size: clamp(2rem, 5vw, 3rem);
         }
         .services-grid {
           grid-template-columns: 1fr;
@@ -408,6 +427,15 @@
         }
         .carousel-overlay {
           padding: 2rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .logo {
+          width: 180px;
+        }
+        .hero-content {
+          padding: 1.5rem;
         }
       }
     </style>
@@ -455,7 +483,7 @@
         ></div>
       </div>
       <div class="hero-content">
-        <h1 class="hero-title">LONDON PURE BLISS</h1>
+        <img src="media/logo.png" alt="London Mobile Bliss Logo" class="logo" />
         <p class="hero-subtitle">
           Premium mobile massage experiences bringing spa-quality relaxation
           directly to your space
