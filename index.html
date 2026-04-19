@@ -21,10 +21,25 @@
     />
 
     <style>
+      /* 🚫 PREVENT HORIZONTAL SCROLL */
+      html,
+      body {
+        overflow-x: hidden;
+        max-width: 100vw;
+      }
+
       body {
         background-color: #050505;
         font-family: "Inter", sans-serif;
+        position: relative;
+        width: 100%;
       }
+
+      /* Ensure all elements respect viewport width */
+      * {
+        box-sizing: border-box;
+      }
+
       .gold-glow {
         text-shadow: 0 0 20px rgba(234, 179, 8, 0.4);
       }
@@ -33,90 +48,124 @@
         border: 1px solid #222;
       }
       .accent-line {
-        height: 4px; /* Slightly thinner for subtlety */
+        height: 4px;
         background: linear-gradient(90deg, #ffd700, #ffa500, #ffd700);
         box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
       }
-      /* Smooth hover for WhatsApp button */
       .whatsapp-btn:hover {
         transform: scale(1.05);
         box-shadow: 0 0 25px rgba(37, 211, 102, 0.5);
       }
-      /* Subtle link hover in footer */
       .footer-link:hover {
         color: #ffd700;
         transition: color 0.2s ease;
       }
+
+      /* 📱 MOBILE TEXT WRAPPING FIX */
+      h1,
+      h2,
+      h3 {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+      }
+
+      /* Prevent buttons from overflowing */
+      .btn-container {
+        max-width: 100%;
+        overflow-wrap: break-word;
+      }
     </style>
   </head>
   <body class="text-white text-sm md:text-base">
-    <!-- Smaller base font -->
-
     <!-- Top Accent Line -->
-    <div class="accent-line"></div>
+    <div class="accent-line w-full"></div>
 
-    <!-- Header Section -->
-    <header class="py-16 px-6 text-center">
-      <!-- Slightly reduced padding -->
+    <!-- Header Section - MOBILE OPTIMIZED -->
+    <header class="py-12 px-4 sm:px-6 text-center w-full">
       <h1
-        class="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none"
+        class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter leading-none break-words"
       >
         THERAPIST <span class="text-yellow-500 gold-glow">MO</span>
       </h1>
       <p
-        class="mt-3 text-yellow-500 uppercase tracking-[0.4em] font-light text-xs md:text-sm"
+        class="mt-3 text-yellow-500 uppercase tracking-[0.3em] sm:tracking-[0.4em] font-light text-[10px] sm:text-xs md:text-sm"
       >
         Recovery Specialist & Performance Expert
       </p>
       <p
-        class="mt-6 text-gray-500 italic text-base md:text-lg max-w-2xl mx-auto"
+        class="mt-4 sm:mt-6 text-gray-500 italic text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-2"
       >
         "We don't just train. We rebuild. We optimize. We dominate."
       </p>
     </header>
 
-    <!-- Main Content: Pricing Cards -->
-    <main class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 pb-16">
+    <!-- Main Content: Pricing Cards - MOBILE OPTIMIZED -->
+    <main
+      class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 pb-12 sm:pb-16 w-full"
+    >
       <!-- Elite Coaching Card -->
-      <div class="card-gradient p-8 rounded-3xl relative overflow-hidden">
+      <div
+        class="card-gradient p-6 sm:p-8 rounded-3xl relative overflow-hidden w-full max-w-full"
+      >
         <div class="absolute top-0 left-0 w-full h-1 bg-yellow-500"></div>
-        <h2 class="text-3xl font-black uppercase mb-8 text-white">
+        <h2
+          class="text-2xl sm:text-3xl font-black uppercase mb-6 sm:mb-8 text-white break-words"
+        >
           Elite Coaching
         </h2>
 
-        <div class="space-y-6">
-          <div class="border-b border-zinc-800 pb-5">
-            <p class="text-zinc-500 uppercase text-[10px] tracking-widest mb-1">
+        <div class="space-y-4 sm:space-y-6">
+          <div class="border-b border-zinc-800 pb-4 sm:pb-5">
+            <p
+              class="text-zinc-500 uppercase text-[9px] sm:text-[10px] tracking-widest mb-1"
+            >
               1 Session / Week
             </p>
-            <p class="text-3xl font-bold text-yellow-500">
-              £145<span class="text-sm text-zinc-600 font-normal">/mo</span>
+            <p
+              class="text-2xl sm:text-3xl font-bold text-yellow-500 break-words"
+            >
+              £145<span class="text-xs sm:text-sm text-zinc-600 font-normal"
+                >/mo</span
+              >
             </p>
-            <p class="mt-2 text-zinc-400 text-xs">
+            <p class="mt-2 text-zinc-400 text-xs sm:text-sm">
               <b>The Foundation:</b> Bespoke conditioning & nutrition suite.
             </p>
           </div>
 
-          <div class="border-b border-zinc-800 pb-5">
-            <p class="text-zinc-500 uppercase text-[10px] tracking-widest mb-1">
+          <div class="border-b border-zinc-800 pb-4 sm:pb-5">
+            <p
+              class="text-zinc-500 uppercase text-[9px] sm:text-[10px] tracking-widest mb-1"
+            >
               2 Sessions / Week
             </p>
-            <p class="text-3xl font-bold text-yellow-500">
-              £290<span class="text-sm text-zinc-600 font-normal">/mo</span>
+            <p
+              class="text-2xl sm:text-3xl font-bold text-yellow-500 break-words"
+            >
+              £290<span class="text-xs sm:text-sm text-zinc-600 font-normal"
+                >/mo</span
+              >
             </p>
-            <p class="mt-2 text-zinc-400 text-xs">
+            <p class="mt-2 text-zinc-400 text-xs sm:text-sm">
               <b>The Hybrid:</b> Rapid recomposition + clinical recovery focus.
             </p>
           </div>
 
           <div>
-            <p class="text-zinc-500 uppercase text-[10px] tracking-widest mb-1">
+            <p
+              class="text-zinc-500 uppercase text-[9px] sm:text-[10px] tracking-widest mb-1"
+            >
               3 Sessions / Week
             </p>
-            <p class="text-3xl font-bold text-yellow-500">
-              £430<span class="text-sm text-zinc-600 font-normal">/mo</span>
+            <p
+              class="text-2xl sm:text-3xl font-bold text-yellow-500 break-words"
+            >
+              £430<span class="text-xs sm:text-sm text-zinc-600 font-normal"
+                >/mo</span
+              >
             </p>
-            <p class="mt-2 text-zinc-400 text-xs">
+            <p class="mt-2 text-zinc-400 text-xs sm:text-sm">
               <b>The Professional:</b> 24/7 Lifestyle & recovery management.
             </p>
           </div>
@@ -124,45 +173,67 @@
       </div>
 
       <!-- Clinical Recovery Card -->
-      <div class="card-gradient p-8 rounded-3xl relative overflow-hidden">
+      <div
+        class="card-gradient p-6 sm:p-8 rounded-3xl relative overflow-hidden w-full max-w-full"
+      >
         <div class="absolute top-0 left-0 w-full h-1 bg-yellow-500"></div>
-        <h2 class="text-3xl font-black uppercase mb-8 text-white">
+        <h2
+          class="text-2xl sm:text-3xl font-black uppercase mb-6 sm:mb-8 text-white break-words"
+        >
           Clinical Recovery
         </h2>
 
-        <div class="space-y-6">
-          <div class="border-b border-zinc-800 pb-5">
-            <p class="text-zinc-500 uppercase text-[10px] tracking-widest mb-1">
+        <div class="space-y-4 sm:space-y-6">
+          <div class="border-b border-zinc-800 pb-4 sm:pb-5">
+            <p
+              class="text-zinc-500 uppercase text-[9px] sm:text-[10px] tracking-widest mb-1"
+            >
               In-Studio Therapy
             </p>
-            <p class="text-3xl font-bold text-yellow-500">
-              £60+<span class="text-sm text-zinc-600 font-normal">/sess</span>
+            <p
+              class="text-2xl sm:text-3xl font-bold text-yellow-500 break-words"
+            >
+              £60+<span class="text-xs sm:text-sm text-zinc-600 font-normal"
+                >/sess</span
+              >
             </p>
-            <p class="mt-2 text-zinc-400 text-xs">
+            <p class="mt-2 text-zinc-400 text-xs sm:text-sm">
               <b>Deep Tissue:</b> Targeted trigger point & myofascial release.
             </p>
           </div>
 
-          <div class="border-b border-zinc-800 pb-5">
-            <p class="text-zinc-500 uppercase text-[10px] tracking-widest mb-1">
+          <div class="border-b border-zinc-800 pb-4 sm:pb-5">
+            <p
+              class="text-zinc-500 uppercase text-[9px] sm:text-[10px] tracking-widest mb-1"
+            >
               London Mobile Bliss
             </p>
-            <p class="text-3xl font-bold text-yellow-500">
-              ELITE<span class="text-sm text-zinc-600 font-normal"> SVC</span>
+            <p
+              class="text-2xl sm:text-3xl font-bold text-yellow-500 break-words"
+            >
+              ELITE<span class="text-xs sm:text-sm text-zinc-600 font-normal">
+                SVC</span
+              >
             </p>
-            <p class="mt-2 text-zinc-400 text-xs">
+            <p class="mt-2 text-zinc-400 text-xs sm:text-sm">
               <b>Premium Home Service:</b> The clinic brought to your door.
             </p>
           </div>
 
           <div>
-            <p class="text-zinc-500 uppercase text-[10px] tracking-widest mb-1">
+            <p
+              class="text-zinc-500 uppercase text-[9px] sm:text-[10px] tracking-widest mb-1"
+            >
               Integrated Hybrid
             </p>
-            <p class="text-3xl font-bold text-yellow-500">
-              REHAB<span class="text-sm text-zinc-600 font-normal"> MOD</span>
+            <p
+              class="text-2xl sm:text-3xl font-bold text-yellow-500 break-words"
+            >
+              REHAB<span class="text-xs sm:text-sm text-zinc-600 font-normal">
+                MOD</span
+              >
             </p>
-            <p class="mt-2 text-zinc-400 text-xs">
+            <p class="mt-2 text-zinc-400 text-xs sm:text-sm">
               <b>Dual Care:</b> PT combined with manual therapy for injury
               rehab.
             </p>
@@ -171,83 +242,58 @@
       </div>
     </main>
 
-    <!-- ✨ MODERNIZED FOOTER & CONTACT SECTION ✨ -->
-    <footer class="bg-black py-16 px-6 text-center border-t border-zinc-900">
-      <!-- Call to Action -->
-      <h3 class="text-2xl md:text-4xl font-black uppercase mb-6">
+<!-- Footer & Contact Section - PROPERLY SIZED BUTTONS -->
+<footer class="bg-black py-12 sm:py-16 px-4 sm:px-6 text-center border-t border-zinc-900 w-full">
+
+    <!-- Call to Action -->
+    <h3 class="text-xl sm:text-2xl md:text-4xl font-black uppercase mb-6 sm:mb-8 break-words">
         Ready for the next level?
-      </h3>
+    </h3>
 
-      <!-- Primary Contact: Phone -->
-      <a
-        href="tel:07960382991"
-        class="inline-block bg-yellow-500 text-black px-10 py-4 rounded-full font-black text-lg hover:scale-105 transition-transform shadow-[0_0_30px_rgba(234,179,8,0.3)] mb-4"
-      >
-        <i class="fas fa-phone-alt mr-2"></i>TEXT MO: 07960382991
-      </a>
+    <!-- Button Container - Centered with Max Width -->
+    <div class="flex flex-col items-center gap-4 sm:gap-5 max-w-md mx-auto px-4 sm:px-0">
 
-      <!-- ✨ NEW: WhatsApp Button ✨ -->
-      <a
-        href="https://wa.me/447960382991"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="whatsapp-btn inline-block bg-[#25D366] text-white px-10 py-4 rounded-full font-black text-lg hover:scale-105 transition-all shadow-[0_0_20px_rgba(37,211,102,0.3)] mb-8"
-      >
-        <i class="fab fa-whatsapp mr-2"></i>CHAT ON WHATSAPP
-      </a>
-
-      <!-- Divider -->
-      <div
-        class="w-24 h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent mx-auto mb-8"
-      ></div>
-
-      <!-- Site Links -->
-      <div
-        class="flex flex-wrap justify-center gap-6 mb-6 text-xs uppercase tracking-wider"
-      >
-        <a
-          href="https://trainwithmo.co.uk"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="footer-link text-zinc-400 hover:text-yellow-500 transition-colors"
-        >
-          <i class="fas fa-globe mr-1"></i>trainwithmo.co.uk
+        <!-- Primary Contact: Phone -->
+        <a href="tel:07960382991"
+           class="w-full inline-block bg-yellow-500 text-black px-8 py-4 sm:py-5 rounded-full font-black text-base sm:text-lg hover:scale-105 transition-transform shadow-[0_0_30px_rgba(234,179,8,0.3)] text-center">
+            <i class="fas fa-phone-alt mr-2"></i>TEXT MO: 07960382991
         </a>
-        <a
-          href="https://londonmobilebliss.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="footer-link text-zinc-400 hover:text-yellow-500 transition-colors"
-        >
-          <i class="fas fa-globe mr-1"></i>londonmobilebliss.com
+
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/447960382991"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="whatsapp-btn w-full inline-block bg-[#25D366] text-white px-8 py-4 sm:py-5 rounded-full font-black text-base sm:text-lg hover:scale-105 transition-all shadow-[0_0_20px_rgba(37,211,102,0.3)] text-center">
+            <i class="fab fa-whatsapp mr-2"></i>CHAT ON WHATSAPP
         </a>
-      </div>
 
-      <!-- Social Placeholder (Optional Expansion) -->
-      <!--
-        <div class="flex justify-center gap-4 mb-6">
-            <a href="#" class="text-zinc-500 hover:text-yellow-500 transition-colors text-lg">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#" class="text-zinc-500 hover:text-yellow-500 transition-colors text-lg">
-                <i class="fab fa-twitter"></i>
-            </a>
-        </div>
-        -->
+    </div>
 
-      <!-- Copyright -->
-      <p
-        class="text-zinc-600 text-[10px] uppercase tracking-widest pt-4 border-t border-zinc-900 mt-4"
-      >
+    <!-- Divider -->
+    <div class="w-24 h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent mx-auto my-8 sm:my-10"></div>
+
+    <!-- Site Links -->
+    <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-6 mb-6 text-[10px] sm:text-xs uppercase tracking-wider">
+        <a href="https://trainwithmo.co.uk"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="footer-link text-zinc-400 hover:text-yellow-500 transition-colors">
+            <i class="fas fa-globe mr-1"></i>trainwithmo.co.uk
+        </a>
+        <span class="hidden sm:inline text-zinc-700">|</span>
+        <a href="https://londonmobilebliss.com"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="footer-link text-zinc-400 hover:text-yellow-500 transition-colors">
+            <i class="fas fa-globe mr-1"></i>londonmobilebliss.com
+        </a>
+    </div>
+
+    <!-- Copyright -->
+    <p class="text-zinc-600 text-[9px] sm:text-[10px] uppercase tracking-widest pt-6 border-t border-zinc-900">
         &copy; <span id="year"></span> Therapist Mo. All Rights Reserved.
-      </p>
+    </p>
 
-      <!-- Auto-update year script -->
-      <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-      </script>
-    </footer>
-
-    <!-- Closing Tags (THE FIX!) -->
+    <!-- Auto-update year
   </body>
 </html>
