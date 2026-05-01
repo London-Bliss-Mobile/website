@@ -141,6 +141,19 @@
         color: #ffd700;
         transition: color 0.2s ease;
       }
+      /* ✅ NEW: About section image styling */
+      .profile-pic {
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        border: 3px solid #ffd700;
+        border-radius: 50%;
+        box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+        transition: transform 0.3s ease;
+      }
+      .profile-pic:hover {
+        transform: scale(1.03);
+      }
 
       /* 📱 MOBILE TEXT WRAPPING FIX */
       h1,
@@ -155,6 +168,17 @@
       .btn-container {
         max-width: 100%;
         overflow-wrap: break-word;
+      }
+
+      /* ✅ NEW: Stripe button hover effect */
+      .stripe-link {
+        transition: all 0.2s ease;
+        cursor: pointer;
+      }
+      .stripe-link:hover {
+        background-color: #1a1a1a;
+        border-left-color: #ffd700;
+        padding-left: 1.25rem;
       }
     </style>
   </head>
@@ -194,11 +218,167 @@
       </p>
     </header>
 
+    <!-- ✅ NEW: ABOUT ME SECTION -->
+    <section
+      class="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-16 border-t border-zinc-900"
+    >
+      <div class="text-center mb-10">
+        <h2
+          class="text-2xl sm:text-3xl font-black uppercase text-yellow-500 gold-glow mb-2"
+        >
+          About Mohamed
+        </h2>
+        <div
+          class="w-20 h-1 bg-gradient-to-r from-yellow-600 via-yellow-400 to-yellow-600 mx-auto rounded"
+        ></div>
+      </div>
+
+      <div
+        class="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12"
+      >
+        <!-- Profile Picture -->
+        <div class="flex-shrink-0 mx-auto md:mx-0">
+          <img
+            src="YOUR_PROFILE_PIC_URL_HERE"
+            alt="Mohamed Aden - Recovery Specialist"
+            class="profile-pic"
+            onerror="this.src='media/profile.jpg'; this.onerror=null;"
+          />
+        </div>
+
+        <!-- Biography Content -->
+        <div class="text-left space-y-4 text-zinc-300 leading-relaxed">
+          <h3 class="text-xl sm:text-2xl font-bold text-white">
+            Expert Care for Peak Performance: Meet Mohamed Aden
+          </h3>
+          <p class="text-yellow-400 font-medium italic">
+            Recover Faster. Move Better. Perform Stronger.
+          </p>
+
+          <p>
+            With over a decade of elite-level experience, I provide a rare
+            fusion of clinical sports therapy and high-performance personal
+            training. My mission is simple: to help busy professionals and
+            high-achievers eliminate pain and unlock their physical potential.
+          </p>
+
+          <div
+            class="border-l-4 border-yellow-500 pl-4 py-2 bg-zinc-900/50 rounded-r"
+          >
+            <p class="font-semibold text-white">The Gold Standard of Therapy</p>
+            <p class="text-sm mt-1">
+              I was trained in Toronto, Canada—one of the world's most rigorous
+              environments for physical therapy—where I qualified to the highest
+              standards as a Registered Massage Therapist (RMT). This clinical
+              background allows me to go far beyond "relaxation."
+            </p>
+          </div>
+
+          <p>I specialize in rehabilitating complex issues, including:</p>
+          <ul class="list-disc list-inside space-y-1 text-sm ml-2">
+            <li>
+              <span class="text-yellow-400">Chronic Lower Back Pain:</span>
+              Targeted decompression and structural realignment.
+            </li>
+            <li>
+              <span class="text-yellow-400"
+                >Repetitive Strain & Sports Injuries:</span
+              >
+              Expert treatment for conditions like Tennis Elbow, Golfer's Elbow,
+              and Rotator Cuff Impingements.
+            </li>
+            <li>
+              <span class="text-yellow-400">Postural Correction:</span> Undoing
+              the physical toll of high-stress, desk-based corporate roles.
+            </li>
+          </ul>
+
+          <div
+            class="border-l-4 border-yellow-500 pl-4 py-2 bg-zinc-900/50 rounded-r"
+          >
+            <p class="font-semibold text-white">
+              Integrated Fitness & Recovery
+            </p>
+            <p class="text-sm mt-1">
+              As a Personal Trainer at PureGym, I offer a unique, 360-degree
+              approach. I am one of the few practitioners in South East London
+              capable of seamlessly combining strength programming with manual
+              therapy. Whether you need to build muscle, lose weight, or recover
+              from an injury, I tailor every session to your specific
+              physiology.
+            </p>
+          </div>
+
+          <p>
+            <span class="text-yellow-400 font-medium"
+              >Bespoke Service That Fits Your Life</span
+            ><br />
+            I understand that time is your most valuable asset. To accommodate
+            demanding schedules, I offer flexible options:
+          </p>
+          <ul class="list-disc list-inside space-y-1 text-sm ml-2">
+            <li>
+              <i class="fas fa-clinic-medical text-yellow-500 mr-2"></i
+              ><strong>In-Clinic:</strong> Visit my dedicated space in South
+              East London.
+            </li>
+            <li>
+              <i class="fas fa-home text-yellow-500 mr-2"></i
+              ><strong>Mobile Service:</strong> Expert-led therapy in the
+              comfort and privacy of your own home.
+            </li>
+          </ul>
+
+          <div
+            class="bg-gradient-to-r from-zinc-900 to-black p-4 rounded-lg border border-yellow-500/30"
+          >
+            <p class="font-bold text-yellow-400 mb-2">
+              ⚠️ Limited Availability – Secure Your Space
+            </p>
+            <p class="text-sm">
+              To maintain the highest quality of care and results, I only work
+              with a select number of clients at any given time. My roster is
+              currently near capacity, and I am looking for a few more dedicated
+              individuals ready to prioritize their health.
+            </p>
+          </div>
+
+          <p class="italic text-zinc-400 border-t border-zinc-800 pt-4 mt-4">
+            Don't wait for an injury to stop you in your tracks.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-3 pt-2">
+            <a
+              href="https://wa.me/447960382991"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center bg-[#25D366] text-white px-6 py-3 rounded-full font-bold text-sm hover:scale-105 transition-transform shadow-[0_0_20px_rgba(37,211,102,0.3)]"
+            >
+              <i class="fab fa-whatsapp mr-2"></i>BOOK YOUR CONSULTATION NOW
+            </a>
+            <a
+              href="https://trainwithmo.co.uk"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center border border-yellow-500 text-yellow-400 px-6 py-3 rounded-full font-bold text-sm hover:bg-yellow-500/10 transition-colors"
+            >
+              <i class="fas fa-external-link-alt mr-2"></i>Explore Training
+              Philosophy
+            </a>
+          </div>
+
+          <p class="text-xs text-zinc-500 pt-2">
+            Transform your recovery. Master your movement.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- Main Content: Pricing Cards - MOBILE OPTIMIZED -->
     <main
       class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 pb-12 sm:pb-16 w-full"
     >
-      <!-- Elite Coaching Card -->
+      <!-- ✅ UPDATED: Elite Coaching Card WITH STRIPE LINKS -->
       <div
         class="card-gradient p-6 sm:p-8 rounded-3xl relative overflow-hidden w-full max-w-full"
       >
@@ -210,11 +390,17 @@
         </h2>
 
         <div class="space-y-4 sm:space-y-6">
-          <div class="border-b border-zinc-800 pb-4 sm:pb-5">
+          <!-- Basic Plan -->
+          <a
+            href="https://buy.stripe.com/8x200jftGbMc2xSgGW4c800"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="stripe-link block border-l-4 border-zinc-700 pl-4 py-3 hover:border-yellow-500 transition-all"
+          >
             <p
               class="text-zinc-500 uppercase text-[9px] sm:text-[10px] tracking-widest mb-1"
             >
-              1 Session / Week
+              Basic • 1 Session / Week
             </p>
             <p
               class="text-2xl sm:text-3xl font-bold text-yellow-500 break-words"
@@ -226,13 +412,22 @@
             <p class="mt-2 text-zinc-400 text-xs sm:text-sm">
               <b>The Foundation:</b> Bespoke conditioning & nutrition suite.
             </p>
-          </div>
+            <p class="mt-1 text-[10px] text-yellow-600 uppercase tracking-wide">
+              <i class="fas fa-external-link-alt mr-1"></i>Secure via Stripe
+            </p>
+          </a>
 
-          <div class="border-b border-zinc-800 pb-4 sm:pb-5">
+          <!-- Pro Plan -->
+          <a
+            href="https://buy.stripe.com/cNicN581e3fG3BWfCS4c801"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="stripe-link block border-l-4 border-zinc-700 pl-4 py-3 hover:border-yellow-500 transition-all"
+          >
             <p
               class="text-zinc-500 uppercase text-[9px] sm:text-[10px] tracking-widest mb-1"
             >
-              2 Sessions / Week
+              Pro • 2 Sessions / Week
             </p>
             <p
               class="text-2xl sm:text-3xl font-bold text-yellow-500 break-words"
@@ -244,13 +439,22 @@
             <p class="mt-2 text-zinc-400 text-xs sm:text-sm">
               <b>The Hybrid:</b> Rapid recomposition + clinical recovery focus.
             </p>
-          </div>
+            <p class="mt-1 text-[10px] text-yellow-600 uppercase tracking-wide">
+              <i class="fas fa-external-link-alt mr-1"></i>Secure via Stripe
+            </p>
+          </a>
 
-          <div>
+          <!-- Elite Plan -->
+          <a
+            href="https://buy.stripe.com/5kQ7sL6Xa4jK7Sc76m4c802"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="stripe-link block border-l-4 border-zinc-700 pl-4 py-3 hover:border-yellow-500 transition-all"
+          >
             <p
               class="text-zinc-500 uppercase text-[9px] sm:text-[10px] tracking-widest mb-1"
             >
-              3 Sessions / Week
+              Elite • 3 Sessions / Week
             </p>
             <p
               class="text-2xl sm:text-3xl font-bold text-yellow-500 break-words"
@@ -262,11 +466,14 @@
             <p class="mt-2 text-zinc-400 text-xs sm:text-sm">
               <b>The Professional:</b> 24/7 Lifestyle & recovery management.
             </p>
-          </div>
+            <p class="mt-1 text-[10px] text-yellow-600 uppercase tracking-wide">
+              <i class="fas fa-external-link-alt mr-1"></i>Secure via Stripe
+            </p>
+          </a>
         </div>
       </div>
 
-      <!-- Clinical Recovery Card -->
+      <!-- ✅ UPDATED: Clinical Recovery Card WITH STRIPE LINKS -->
       <div
         class="card-gradient p-6 sm:p-8 rounded-3xl relative overflow-hidden w-full max-w-full"
       >
@@ -278,65 +485,88 @@
         </h2>
 
         <div class="space-y-4 sm:space-y-6">
-          <div class="border-b border-zinc-800 pb-4 sm:pb-5">
+          <!-- In-Studio Massage -->
+          <a
+            href="https://buy.stripe.com/5kQcN56Xa9E4egAaiy4c80a"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="stripe-link block border-l-4 border-zinc-700 pl-4 py-3 hover:border-yellow-500 transition-all"
+          >
             <p
               class="text-zinc-500 uppercase text-[9px] sm:text-[10px] tracking-widest mb-1"
             >
-              In-Studio Therapy
+              In-Studio Massage • 60 mins
             </p>
             <p
               class="text-2xl sm:text-3xl font-bold text-yellow-500 break-words"
             >
               £60+<span class="text-xs sm:text-sm text-zinc-600 font-normal"
-                >/sess</span
+                >/session</span
               >
             </p>
             <p class="mt-2 text-zinc-400 text-xs sm:text-sm">
               <b>Deep Tissue:</b> Targeted trigger point & myofascial release.
             </p>
-          </div>
+            <p class="mt-1 text-[10px] text-yellow-600 uppercase tracking-wide">
+              <i class="fas fa-external-link-alt mr-1"></i>Secure via Stripe
+            </p>
+          </a>
 
-          <div class="border-b border-zinc-800 pb-4 sm:pb-5">
+          <!-- Elite At-Home Massage -->
+          <a
+            href="https://buy.stripe.com/bJe4gzepCaI8egA76m4c80b"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="stripe-link block border-l-4 border-zinc-700 pl-4 py-3 hover:border-yellow-500 transition-all"
+          >
             <p
               class="text-zinc-500 uppercase text-[9px] sm:text-[10px] tracking-widest mb-1"
             >
-              London Mobile Bliss
+              ELITE • At-Home Massage • 60 mins
             </p>
             <p
               class="text-2xl sm:text-3xl font-bold text-yellow-500 break-words"
             >
-              ELITE<span class="text-xs sm:text-sm text-zinc-600 font-normal">
-                SVC</span
+              £89.00<span class="text-xs sm:text-sm text-zinc-600 font-normal"
+                >/session</span
               >
             </p>
             <p class="mt-2 text-zinc-400 text-xs sm:text-sm">
               <b>Premium Home Service:</b> The clinic brought to your door.
             </p>
-          </div>
+            <p class="mt-1 text-[10px] text-yellow-600 uppercase tracking-wide">
+              <i class="fas fa-external-link-alt mr-1"></i>Secure via Stripe
+            </p>
+          </a>
 
-          <div>
+          <!-- Rehab Mod Dual Care -->
+          <a
+            href="https://buy.stripe.com/5kQ3cv0yM8A0b4oaiy4c80c"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="stripe-link block border-l-4 border-zinc-700 pl-4 py-3 hover:border-yellow-500 transition-all"
+          >
             <p
               class="text-zinc-500 uppercase text-[9px] sm:text-[10px] tracking-widest mb-1"
             >
-              Integrated Hybrid
+              REHAB MOD • Dual Care
             </p>
-            <p
-              class="text-2xl sm:text-3xl font-bold text-yellow-500 break-words"
-            >
-              REHAB<span class="text-xs sm:text-sm text-zinc-600 font-normal">
-                MOD</span
-              >
+            <p class="text-lg sm:text-xl font-bold text-yellow-500 break-words">
+              Custom Pricing
             </p>
             <p class="mt-2 text-zinc-400 text-xs sm:text-sm">
               <b>Dual Care:</b> PT combined with manual therapy for injury
               rehab.
             </p>
-          </div>
+            <p class="mt-1 text-[10px] text-yellow-600 uppercase tracking-wide">
+              <i class="fas fa-external-link-alt mr-1"></i>Secure via Stripe
+            </p>
+          </a>
         </div>
       </div>
     </main>
 
-    <!-- ✅ NEW: Service Area Section (Natural Language + SEO Friendly) -->
+    <!-- ✅ Service Area Section (Natural Language + SEO Friendly) -->
     <section
       class="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-12 border-t border-zinc-900"
     >
